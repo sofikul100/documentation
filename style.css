@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+    background-color: #EEF6FD;
+    font-family: "Poppins", sans-serif;
+}
+
+.animated-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    animation: moveColor 4s infinite alternate ease-in-out;
+}
+
+@keyframes moveColor {
+    0% {
+        letter-spacing: 2px;
+    }
+    50% {
+        letter-spacing: 6px;
+    }
+    100% {
+        letter-spacing: 2px;
+    }
+}
+
+/* Left-to-right color animation */
+.text-move span {
+    display: inline-block;
+    position: relative;
+    animation: textMove 4s infinite alternate ease-in-out;
+}
+
+@keyframes textMove {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 15px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/* Slider Height */
+.carousel-item img {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* Submenu Animation */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#wrap_main{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding:0px;
+}
+
+
+   /* Dark Background for Command Line and Code Blocks */
+   .command-line, .code-block {
+    background-color: #1e1e1e;
+    border-radius: .25rem;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: monospace;
+    color: #dcdcdc;
+    position: relative;
+}
+
+.command-line button, .code-block button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.documentation_content{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

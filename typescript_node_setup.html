@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nodejs Setup With Typescript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+      <div class="container" id="wrap_main">
+
+      
+     
+        <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        RPS CODEX
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                                    <li><a class="dropdown-item" href="#">Python</a></li>
+                                    <li><a class="dropdown-item" href="#">C#</a></li>
+                                    <li><a class="dropdown-item" href="#">React</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+       
+    
+        <!-- Title -->
+        <div class=" mt-4">
+            <h1 class="animated-title text-dark text-move">
+                <span style="color:#53A245;">NODE JS</span> SETUP WITH 
+                <span style="color:#3178C6;">TYPESCRIPT</span>
+            </h1>
+        </div><hr>
+
+
+         <div class="container documentation_content">
+               
+        
+          
+                 <!-- Node.js Setup Section -->
+        <div id="setup">
+            <h2>Install and Verify Node.js in Your Operating System</h2>
+            <p>Go to <a href="https://nodejs.org/en" target="_blank">nodejs.org</a> and download Node.js.</p>
+
+            <h3>Step 1: Create a Project Folder</h3>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('mkdir nodejs-with-ts\ncd nodejs-with-ts/')"><i class="fas fa-copy"></i> Copy</button>
+                <code>mkdir nodejs-with-ts<br>cd nodejs-with-ts/</code>
+            </div>
+
+            <h3>Step 2: Initialize a Node.js Project</h3>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm init -y')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm init -y</code>
+            </div>
+            <p>Create a <code>src</code> folder in the root and in it create <code>index.ts</code> file with the following content:</p>
+            <div class="code-block">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('console.log(2 + 3);')"><i class="fas fa-copy"></i> Copy</button>
+                <code>console.log(2 + 3);</code>
+            </div>
+
+            <h3>Step 3: Install TypeScript with Types</h3>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm i -D typescript @types/node')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm i -D typescript @types/node</code>
+            </div>
+            <p>Verify the installation by running:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npx tsc -v')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npx tsc -v</code>
+            </div>
+
+            <h3>Step 4: Create TypeScript Config File</h3>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npx tsc --init')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npx tsc --init</code>
+            </div>
+            <p>Modify the generated <code>tsconfig.json</code> file to this:</p>
+            <div class="code-block">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('{ "compilerOptions": { "module": "CommonJS", "target": "ES2016", "noImplicitAny": true, "removeComments": true, "strict": true, "esModuleInterop": true, "skipLibCheck": true, "forceConsistentCasingInFileNames": true, "rootDir": "./src", "outDir": "./dist", "baseUrl": ".", "paths": { "@/*": ["./src/*"] }, }, "include": ["src/**/*"], "exclude": ["node_modules"] }')"><i class="fas fa-copy"></i> Copy</button>
+                <pre>
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2016",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+                </pre>
+            </div>
+
+            <h3>Step 5: Install Other Packages We Use in the Project</h3>
+            <p>Install <code>express</code>:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install express @types/express')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm install express @types/express</code>
+            </div>
+            <p>Install <code>dotenv</code> and <code>cors</code>:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install cors dotenv')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm install cors dotenv</code>
+            </div>
+            <p>Install <code>bcrypt</code> and its types:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install bcrypt @types/bcrypt')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm install bcrypt @types/bcrypt</code>
+            </div>
+            <p>Install <code>prisma</code> and <code>@prisma/client</code>:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install prisma @prisma/client')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm install prisma @prisma/client</code>
+            </div>
+            <p>Then Write This Command  <code>npx prisma init</code> </p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npx prisma init')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npx prisma init</code>
+            </div>
+            <p>Then Create a Model</p>
+            <div class="code-block">
+                <pre>
+model User {
+    id        Int      @id @default(autoincrement())
+    name      String
+    email     String   @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+                </pre>
+            </div>
+
+            <p>Then just migrate it this command </p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install prisma @prisma/client')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npx prisma migrate dev --name add-updatedAt-to-user
+                </code>
+            </div>
+            <p>Install build tools:</p>
+            <div class="command-line">
+                <button class="btn btn-light btn-sm" onclick="copyToClipboard('npm install --save-dev tsc-alias ts-node-dev tsconfig-paths')"><i class="fas fa-copy"></i> Copy</button>
+                <code>npm install --save-dev tsc-alias ts-node-dev tsconfig-paths</code>
+            </div>
+
+            <h3>Step 6: Modify the Script in Your package.json File</h3>
+            <div class="code-block">
+               
+                <pre>
+{
+  "scripts": {
+    "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./src/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node ./dist",
+    "postinstall": "prisma generate"
+  }
+}
+                </pre>
+            </div>
+
+            <h3>Step 7: Project File Structure</h3>
+            <p>Define your project file structure as needed for your application.</p>
+
+            <h3>Step 8: Create an Express Server</h3>
+            <p>Modify your <code>src/index.ts</code> to this:</p>
+            <div class="code-block">
+              
+                <pre>
+import express from "express";
+require("dotenv").config();
+const cors = require("cors");
+const app = express();
+
+app.use(cors());
+
+const PORT = process.env.PORT || 8000;
+
+app.use(express.json());
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+                </pre>
+            </div>
+            <p><strong>Summary of What the Code Does:</strong></p>
+            <ul>
+                <li><strong>Express Setup:</strong> Sets up an Express server.</li>
+                <li><strong>Environment Variables:</strong> Uses dotenv to manage sensitive configuration.</li>
+                <li><strong>CORS Middleware:</strong> Allows cross-origin requests.</li>
+                <li><strong>Port Configuration:</strong> Sets the server port from environment variables or defaults to 8000.</li>
+                <li><strong>JSON Parsing:</strong> Parses incoming JSON payloads.</li>
+                <li><strong>Server Start:</strong> Starts the server and logs the URL.</li>
+            </ul>
+
+            <h3>Step 9: Create a Simple API Endpoint</h3>
+            <p>Add the following code to create an API endpoint in <code>src/index.ts</code>:</p>
+            <div class="code-block">
+               
+                <pre>
+import express, { Request, Response } from "express";
+app.get("/customers", (req: Request, res: Response) => {
+  const customers = [
+    { name: "John Doe", email: "john.doe@example.com", phone: "+1234567890" },
+    { name: "Joel Smith", email: "joel.smith@example.com", phone: "+0987654321" },
+  ];
+ 
+  return res.status(200).json(customers);
+});
+                </pre>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-dark text-light text-center py-3 mt-5">
+            <p>&copy; 2024 My Code Blog | Md. Sofikul Islam</p>
+        </footer
+
+        </div>
+
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+       <script>
+        function copyToClipboard(text) {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            alert('Code copied to clipboard!');
+        }
+    </script>
+  </body>
+</html>
