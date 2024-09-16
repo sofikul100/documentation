@@ -533,6 +533,104 @@ Pop: সর্বশেষ যুক্তকৃত আইটেমটি স্
         <br/>
 
 
+         <!-- queue data implementation  -->
+         <div id="setup">
+          
+
+
+            <h3 style="font-size: 14px; font-weight: bold; text-transform: uppercase;"><span style="color:rgb(12, 57, 171)">Problem 6:</span> <-------QUEUE DATA STRUCTURE EXAMPLE IN C# (BANGLA EXPLAIN) ----> </h3>
+<pre>
+কিউ (Queue) ডেটা স্ট্রাকচার একটি লিনিয়ার ডেটা স্ট্রাকচার যা FIFO (First In, First Out) প্রিন্সিপাল অনুসরণ করে। অর্থাৎ, যেটি প্রথমে প্রবেশ করে সেটি প্রথমে বের হয়। কিউ ব্যবহার করে বিভিন্ন ধরনের ডেটা প্রক্রিয়া করা যায়, যেমন প্রিন্টিং জব পরিচালনা, প্রক্রিয়া সময়সূচী, ইত্যাদি।
+
+নিচে C# এ কিউ ডেটা স্ট্রাকচার ইমপ্লিমেন্ট করার বিস্তারিত ব্যাখ্যা দেওয়া হলো।
+
+১. মৌলিক কিউ ডেটা স্ট্রাকচার
+এখানে আমরা একটি মৌলিক কিউ ক্লাস তৈরি করব যা এনক্যাপসুলেটেড পদ্ধতিতে মৌলিক কিউ কার্যকারিতা প্রদান করবে।
+ব্যাখ্যা
+একটি নতুন কিউ তৈরি করা হয়েছে এবং তিনটি সংখ্যা কিউতে যুক্ত করা হয়েছে।
+Peek মেথড ব্যবহার করে প্রথম আইটেম দেখা হয়েছে।
+একটি লুপ ব্যবহার করে সব আইটেম কিউ থেকে সরানো হয়েছে।
+এই মৌলিক কিউ ক্লাসটি C# এ কিউ ডেটা স্ট্রাকচার ইমপ্লিমেন্ট করার জন্য একটি সাধারণ উদাহরণ। আপনি এই ক্লাসটিকে আরো উন্নত করতে পারেন যেমন কিউ সাইজ সীমিত করা বা মাল্টিথ্রেডিং সমর্থন যুক্ত করার মাধ্যমে।
+</pre>  
+            <div class="command-line">
+<pre style="color:white">
+    using System;
+    using System.Collections.Generic;
+    
+    public class Queue<T>
+    {
+        private LinkedList<T> _items = new LinkedList<T>();
+    
+        // এনক্যাপসুলেটেড পদ্ধতি - আইটেম কিউতে যুক্ত করার জন্য
+        public void Enqueue(T item)
+        {
+            _items.AddLast(item);
+        }
+    
+        // এনক্যাপসুলেটেড পদ্ধতি - কিউ থেকে আইটেম সরানোর জন্য
+        public T Dequeue()
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("Queue is empty");
+            }
+            T value = _items.First.Value;
+            _items.RemoveFirst();
+            return value;
+        }
+    
+        // এনক্যাপসুলেটেড পদ্ধতি - কিউয়ের প্রথম আইটেম দেখার জন্য
+        public T Peek()
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("Queue is empty");
+            }
+            return _items.First.Value;
+        }
+    
+        // এনক্যাপসুলেটেড পদ্ধতি - কিউটি খালি কিনা পরীক্ষা করার জন্য
+        public bool IsEmpty()
+        {
+            return _items.Count == 0;
+        }
+    
+        // কিউয়ের আইটেম সংখ্যা দেখানোর জন্য
+        public int Count
+        {
+            get { return _items.Count; }
+        }
+    }
+
+
+
+
+    public class Program
+{
+    public static void Main()
+    {
+        Queue<int> queue = new Queue<int>();
+
+        queue.Enqueue(1);
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+
+        Console.WriteLine("Front item: " + queue.Peek()); // Output: Front item: 1
+
+        while (!queue.IsEmpty())
+        {
+            Console.WriteLine(queue.Dequeue()); // Output: 1, 2, 3
+        }
+    }
+}
+    
+    
+</pre>
+            </div>
+        </div>
+        <br/>
+
+
 
 
 
