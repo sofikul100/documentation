@@ -697,6 +697,46 @@ Peek মেথড ব্যবহার করে প্রথম আইটে�
         <br/>
 
 
+          <!-- REMOVE DUPLICATE ITEM FROM THE SORTED ARRAY AND RETURN NUMBER OF UNIQUE ITEM  LENGTH  -->
+          <div id="setup">
+          
+
+
+            <h3 style="font-size: 14px; font-weight: bold; text-transform: uppercase;"><span style="color:rgb(12, 57, 171)">Problem 8:</span> <------ REMOVE DUPLICATE ITEM FROM THE SORTED ARRAY AND RETURN NUMBER OF UNIQUE ITEM  LENGTH ----> </h3>
+<pre>
+NOTE that hasSet only holds unique number of items
+</pre>
+
+            <div class="command-line">
+<pre style="color:white">
+public class Solution {
+    public int RemoveDuplicates(int[] nums) {
+        
+        
+        HashSet<int> uniqueElements  = new HashSet<int>();
+        
+        foreach(var num in nums){
+            uniqueElements .Add(num);
+        }
+
+        int index = 0;
+
+        foreach(var uniqeNum in uniqueElements){
+            nums[index] = uniqeNum;
+            index++;
+        }
+
+        return uniqueElements.Count;
+
+    }
+}
+</pre>
+            </div>
+        </div>
+        <br/>
+
+
+
 
 
 
