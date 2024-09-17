@@ -631,6 +631,72 @@ Peek মেথড ব্যবহার করে প্রথম আইটে�
         <br/>
 
 
+          <!-- MAXIMUM CHAR OCCURING IN STRING implementation  -->
+          <div id="setup">
+          
+
+
+            <h3 style="font-size: 14px; font-weight: bold; text-transform: uppercase;"><span style="color:rgb(12, 57, 171)">Problem 7:</span> <-------MAXIMUM CHAR OCCURING  EXAMPLE IN C# (BANGLA EXPLAIN) ----> </h3>
+<pre>
+
+            <div class="command-line">
+<pre style="color:white">
+    using System;
+    using System.Collections.Generic;
+    
+    class Program
+    {
+        static void Main()
+        {
+            string input = "example stringaaaaaaaaaaaaaa";
+            var result = GetMaxOccurringChar(input);
+            Console.WriteLine($"The character that appears the most is: '{result.Item1}' with a count of {result.Item2}");
+        }
+    
+        static Tuple<char, int> GetMaxOccurringChar(string input)
+        {
+            // Create a dictionary to store the count of each character
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+    
+            foreach (char c in input)
+            {
+                if (charCount.ContainsKey(c))
+                {
+                    charCount[c]++;
+                }
+                else
+                {
+                    charCount[c] = 1;
+                }
+            }
+    
+            // Variables to keep track of the character with the maximum count
+            char maxChar = '\0';  // Initialize with a null character
+            int maxCount = 0;     // To store the maximum occurrence count
+    
+            // Iterate over the dictionary to find the character with the maximum count
+            foreach (var pair in charCount)
+            {
+                if (pair.Value > maxCount)
+                {
+                    maxCount = pair.Value;
+                    maxChar = pair.Key;
+                }
+            }
+    
+            // Return both the character and the maximum count
+            return new Tuple<char, int>(maxChar, maxCount);
+        }
+    }
+      
+    
+    
+</pre>
+            </div>
+        </div>
+        <br/>
+
+
 
 
 
